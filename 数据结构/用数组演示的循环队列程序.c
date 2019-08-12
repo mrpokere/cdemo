@@ -37,11 +37,11 @@ int main(void)
 
     if(out_queue(&Q,&val))
     {
-        printf("���ӳɹ�,����Ϊ: %d\n",val);
+        printf("出队成功,内容为: %d\n",val);
     }
     else
     {
-        printf("����Ϊ��,����ʧ��\n");
+        printf("队列为空,出队失败\n");
     }
     traverse_queue(&Q);
 
@@ -92,10 +92,11 @@ void traverse_queue(QUEUE *pQ)
     printf("\n");
     return;
 }
-���⣺������c���Ե����ݽṹ��������ʵ�ֶ��еı�������Ϊʲô����ĺ�����������أ�
-����ĺ�������ȷ��
-�ҷ������˼��鷢��������ȷ�ĺ����ǰ�pQ->front�ñ��������ˣ�
-�����ϲ�Ӧ����һ������
+问题：请问在c语言的数据结构的用数组实现队列的遍历操作为什么上面的函数会问题的呢，
+下面的函数是正确的
+我反复看了几遍发现下面正确的函数是把pQ->front用变量代表了，
+本质上不应该是一样的吗
+已解决，原因是直接用pQ-》front会改变原来数据
 */
 void traverse_queue(QUEUE *pQ)
 {
